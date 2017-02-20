@@ -177,9 +177,9 @@
 \end{center}
 
 \item \emph{no}, \emph{every}, and \emph{some} need to have type  $(et)(et)t$.
-\item \emph{every} $~> \lambda P_{et}\ \lambda Q_{et}\ \forall x_e\ P(x) -> Q(x)$
-\item \emph{some} $~> \lambda P_{et}\ \lambda Q_{et}\ \exists x_e\ P(x) \land Q(x)$
-\item \emph{no} $~> \lambda P_{et}\ \lambda Q_{et}\ \lnot\exists x_e\ P(x) \land Q(x)$
+\item \emph{every} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \forall x_e.\ P(x) -> Q(x)$
+\item \emph{some} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \exists x_e.\ P(x) \land Q(x)$
+\item \emph{no} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \lnot\exists x_e.\ P(x) \land Q(x)$
 \end{itemize}
 
 \subsection{Relations between sets}
@@ -187,7 +187,7 @@
 \begin{itemize}
 \item Each of these are translations into a characteristic function notation of set relations
 \item If $R$ is a relation between sets, we can produce the function version as follows
-  $$f_R = \lambda P_{et}\ \lambda Q_{et}\ \{\{x\mid P(x) = \top\},\{x\mid Q(x) = \top\}\}\in R$$
+  $$f_R = \lambda P_{et}.\ \lambda Q_{et}.\ \{\{x\mid P(x) = \top\},\{x\mid Q(x) = \top\}\}\in R$$
 \item Set relations have certain formal properties, which we can translate into the function notation
   \begin{itemize}
   \item $f$ is reflexive iff $\forall a_{et}.\ f(a)(a)$
