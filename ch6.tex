@@ -188,7 +188,23 @@
 \item Each of these are translations into a characteristic function notation of set relations
 \item If $R$ is a relation between sets, we can produce the function version as follows
   $$f_R = \lambda P_{et}\ \lambda Q_{et}\ \{\{x\mid P(x) = \top\},\{x\mid Q(x) = \top\}\}\in R$$
-\item
+\item Set relations have certain formal properties, which we can translate into the function notation
+  \begin{itemize}
+  \item $f$ is reflexive iff $\forall a_{et}.\ f(a)(a)$
+  \item $f$ is irreflexive iff $\forall a_{et}.\ \lnot f(a)(a)$
+  \item $f$ is symmetric iff $\forall a_{et}, b_{et}.\ f(a)(b) \iff f(b)(a)$
+  \item $f$ is antisymmetric iff $\forall a_{et}, b_{et}.\ f(a)(b) \land f(b)(a) -> a = b$
+  \item $f$ is transitive iff $\forall a_{et}, b_{et}, c_{et}.\ f(b)(a) \land f(c)(b) -> f(c)(a)$
+  \item $f$ is conservative iff $\forall a_{et}, b_{et}.\ f(b)(a) \iff f(\lambda x.\ a(x) \land b(x))(a)$
+  \item $f$ is left upward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(a) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(c)(b)$
+  \item $f$ is left downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(b) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(c)(a)$
+  \item $f$ is right upward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(a)(c) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(b)(c)$
+  \item $f$ is right downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(b)(c) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(a)(c)$
+  \end{itemize}
 \end{itemize}
 
 
