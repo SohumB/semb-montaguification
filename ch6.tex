@@ -124,6 +124,22 @@
 \section{Semantics of quantifiers}
 
 \subsection{Compositional semantics}
+Consider an expanded, compositional version of the tree from before.
+\begin{center}
+  \begin{tabular}{c}
+    \Tree [.t [.{(et)t} [.{???} \emph{no} ] [.et \emph{thing} ]] [.et \emph{vanished} ] ]
+  \end{tabular}
+\end{center}
+
+If \emph{no}, \emph{every}, and \emph{some} are to compositionally recover the earlier meanings, they have to
+have the type $(et)(et)t$.
+
+\begin{align*}
+  every &~> \lambda P_{et}\ \lambda Q_{et}\ \forall x_e\ P(x) -> Q(x) \\
+  some &~> \lambda P_{et}\ \lambda Q_{et}\ \exists x_e\ P(x) \land Q(x) \\
+  no &~> \lambda P_{et}\ \lambda Q_{et}\ \lnot\exists x_e\ P(x) \land Q(x)
+\end{align*}
+
 \subsection{Relations between sets}
 
 
