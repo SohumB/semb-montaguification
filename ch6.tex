@@ -91,7 +91,7 @@
 \csyms{A,B,C,D}
 \mathlig{|}{\mid}
 \mathlig{==}{\equiv}
-\mathlig{~>}{\leadsto}
+\mathlig{~>}{\rightsquigarrow}
 \mathlig{~=}{\approx}
 \mathlig{~}{\lnot}
 \mathlig{|->}{\mapsto}
@@ -132,9 +132,9 @@
 	\item Not all quantifiers are upward monotonic ($P \land Q \rightarrow P$)
 	\begin{itemize}
 		\item John came yesterday morning. $\Rightarrow$ John came yesterday.
-		\item $P(x_e) \land Q_(x_e) \rightarrow P(x_e)$
+		\item $P(x_e) \land Q(x_e) \rightarrow P(x_e)$
 		\item No letter came yesterday morning. $\not\Rightarrow$ No letter came yesterday.
-		\item $\neg\exists x_e.P(x) \land Q(x) \not\rightarrow \neg\exists x_e.P(x)$
+		\item $\neg\exists x_e.(P(x) \land Q(x)) \not\rightarrow \neg\exists x_e.P(x)$
 		\item Entailment from a more specific predication (subset) to a more general predication (superset) is not necessarily given under quantification.
 		\item Quantifiers like \lq at most one\rq\ and \lq no\rq\ are \emph{downward entailing}.
 	\end{itemize}
@@ -144,13 +144,16 @@
 		\item Mt. Rainier is on this side of the border and Mt. Rainier is on the other side of the border. $\Leftrightarrow \bot$
 		\item $P(x_e) \land Q(x_e) \leftrightarrow \bot,$ where $P^\rightsquigarrow \cap Q^\rightsquigarrow = \varnothing$
 		\item Some mountains are on this side of the border and some mountains are on the other side of the border.
-		\item $\exists x_e.P(x) \land Q(x) \not \leftrightarrow \bot,$ even if $P^\rightsquigarrow \cap Q^\rightsquigarrow = \varnothing$
+		\item $\exists x_e.(P(x)) \land \exists x_e.(Q(x)) \not \leftrightarrow \bot,$ even if $P^\rightsquigarrow \cap Q^\rightsquigarrow = \varnothing$
 	\end{itemize}
 
 	\item Not all quantifiers obey the law of the excluded middle ($P \lor \neg P$)
 
 	\begin{itemize}
-		\item 
+		\item I am over 30 years old or I am under 30 years old. $\Leftrightarrow \top$
+		\item $P(x_e) \lor \neg P(x_e) \leftrightarrow \top$
+		\item Every woman in this room is over 30 years old or every woman in this room is under 30 years old. $\not \Leftrightarrow \top$
+		\item $\forall x_e.(P(x)) \land \forall x_e.(Q(x)) \not\leftrightarrow \top$
 	\end{itemize}
 
 	\item Scope ambiguities
