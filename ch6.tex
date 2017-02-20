@@ -55,7 +55,7 @@
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{Semantics B \\ Chapter 6}
-\setmainfont[Ligatures={Common}]{Linux Libertine O}[ItalicFont = Linux Libertine O Italic]
+\setmainfont[Ligatures={Common},ItalicFont = Linux Libertine O Italic]{Linux Libertine O}
 \providecommand{\abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
 \providecommand{\tuple}[1]{\left\langle#1\right\rangle}
@@ -122,14 +122,15 @@
 \end{center}
 
 \begin{itemize}
-	\item \emph{nothing} 	$\rightsquigarrow \lambda P_{et}. \neg\exists x_e.P(x)$
-	\item \emph{Ann} 		$\rightsquigarrow \textsc{Ann}_e$ (/$\textsc{a}_e$) 
-	\item \emph{vanish}		$\rightsquigarrow \textsc{vanish}_{et}$
+  \item \emph{nothing}  $\rightsquigarrow \lambda P_{et}. \neg\exists x_e.P(x)$
+  \item \emph{Ann}    $\rightsquigarrow \textsc{Ann}_e$ (/$\textsc{a}_e$)
+  \item \emph{vanish}   $\rightsquigarrow \textsc{vanish}_{et}$
 \end{itemize}
 
 \subsection{Quantifiers aren't of type $e$}
 
 \begin{itemize}
+<<<<<<< HEAD
 	\item Not all quantifiers are upward monotonic ($P \land Q \rightarrow P$)
 	\begin{itemize}
 		\item John came yesterday morning. $\Rightarrow$ John came yesterday.
@@ -158,13 +159,40 @@
 	\end{itemize}
 
 	\item Scope ambiguities
+=======
+  \item Not all quantifiers are upward monotonic ($P \land Q \rightarrow P$)
+  \begin{itemize}
+    \item John came yesterday morning. $\Rightarrow$ John came yesterday.
+    \item $P(x_e) \land Q_(x_e) \rightarrow P(x_e)$
+    \item No letter came yesterday morning. $\not\Rightarrow$ No letter came yesterday.
+    \item $\neg\exists x_e.P(x) \land Q(x) \not\rightarrow \neg\exists x_e.P(x)$
+    \item Entailment from a more specific predication (subset) to a more general predication (superset) is not necessarily given under quantification.
+    \item Quantifiers like \lq at most one\rq\ and \lq no\rq\ are \emph{downward entailing}.
+  \end{itemize}
+
+  \item Not all quantifiers obey the law of contradiction ($\neg P \land \neg P$)
+  \begin{itemize}
+    \item Mt. Rainier is on this side of the border and Mt. Rainier is on the other side of the border. $\Leftrightarrow \bot$
+    \item $P(x_e) \land Q(x_e) \leftrightarrow \bot,$ where $P^\rightsquigarrow \cap Q^\rightsquigarrow = \varnothing$
+    \item Some mountains are on this side of the border and some mountains are on the other side of the border.
+    \item $\exists x_e.P(x) \land Q(x) \not \leftrightarrow \bot,$ even if $P^\rightsquigarrow \cap Q^\rightsquigarrow = \varnothing$
+  \end{itemize}
+
+  \item Not all quantifiers obey the law of the excluded middle ($P \lor \neg P$)
+
+  \begin{itemize}
+    \item
+  \end{itemize}
+
+  \item Scope ambiguities
+>>>>>>> 3eca9451bb25fb653f28ef72ed348c5b7642aeef
 \end{itemize}
 
 \subsection{Quantifiers aren't of type $et$}
 
 \begin{itemize}
-	\item Should also be upward entailing
-	\item Contradiction, Excluded middle + superset entailment should still hold
+  \item Should also be upward entailing
+  \item Contradiction, Excluded middle + superset entailment should still hold
 \end{itemize}
 
 
@@ -180,12 +208,35 @@
 \end{center}
 
 \item \emph{no}, \emph{every}, and \emph{some} need to have type  $(et)(et)t$.
-\item \emph{every} $~> \lambda P_{et}\ \lambda Q_{et}\ \forall x_e\ P(x) -> Q(x)$
-\item \emph{some} $~> \lambda P_{et}\ \lambda Q_{et}\ \exists x_e\ P(x) \land Q(x)$
-\item \emph{no} $~> \lambda P_{et}\ \lambda Q_{et}\ \lnot\exists x_e\ P(x) \land Q(x)$
+\item \emph{every} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \forall x_e.\ P(x) -> Q(x)$
+\item \emph{some} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \exists x_e.\ P(x) \land Q(x)$
+\item \emph{no} $~> \lambda P_{et}.\ \lambda Q_{et}.\ \lnot\exists x_e.\ P(x) \land Q(x)$
 \end{itemize}
 
 \subsection{Relations between sets}
+
+\begin{itemize}
+\item Each of these are translations into a characteristic function notation of set relations
+\item If $R$ is a relation between sets, we can produce the function version as follows
+  $$f_R = \lambda P_{et}.\ \lambda Q_{et}.\ \{\{x\mid P(x) = \top\},\{x\mid Q(x) = \top\}\}\in R$$
+\item Set relations have certain formal properties, which we can translate into the function notation
+  \begin{itemize}
+  \item $f$ is reflexive iff $\forall a_{et}.\ f(a)(a)$
+  \item $f$ is irreflexive iff $\forall a_{et}.\ \lnot f(a)(a)$
+  \item $f$ is symmetric iff $\forall a_{et}, b_{et}.\ f(a)(b) \iff f(b)(a)$
+  \item $f$ is antisymmetric iff $\forall a_{et}, b_{et}.\ f(a)(b) \land f(b)(a) -> a = b$
+  \item $f$ is transitive iff $\forall a_{et}, b_{et}, c_{et}.\ f(b)(a) \land f(c)(b) -> f(c)(a)$
+  \item $f$ is conservative iff $\forall a_{et}, b_{et}.\ f(b)(a) \iff f(\lambda x.\ a(x) \land b(x))(a)$
+  \item $f$ is left upward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(a) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(c)(b)$
+  \item $f$ is left downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(b) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(c)(a)$
+  \item $f$ is right upward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(a)(c) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(b)(c)$
+  \item $f$ is right downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(b)(c) \land \forall x_e.\ a(x)
+    -> b(x)\Big) -> f(a)(c)$
+  \end{itemize}
+\end{itemize}
 
 
 \section{Presuppositional behaviour of quantifiers}
