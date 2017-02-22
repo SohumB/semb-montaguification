@@ -206,6 +206,7 @@
   \item $f$ is antisymmetric iff $\forall a_{et}, b_{et}.\ f(a)(b) \land f(b)(a) -> a = b$
   \item $f$ is transitive iff $\forall a_{et}, b_{et}, c_{et}.\ f(b)(a) \land f(c)(b) -> f(c)(a)$
   \item $f$ is conservative iff $\forall a_{et}, b_{et}.\ f(b)(a) \iff f(\lambda x.\ a(x) \land b(x))(a)$
+  \item $f$ is intersective iff $\exists g.\ f(a_{et})(b_{et}) = g(size(\lambda x_e.\ a(x) \land b(x)))$
   \item $f$ is left upward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(a) \land \forall x_e.\ a(x)
     -> b(x)\Big) -> f(c)(b)$
   \item $f$ is left downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(c)(b) \land \forall x_e.\ a(x)
@@ -214,6 +215,49 @@
     -> b(x)\Big) -> f(b)(c)$
   \item $f$ is right downward monotone iff $\forall a_{et}, b_{et}, c_{et}.\ \Big(f(b)(c) \land \forall x_e.\ a(x)
     -> b(x)\Big) -> f(a)(c)$
+  \end{itemize}
+\item There-insertion correlates with intersectivity:
+  \begin{itemize}
+  \item There are few apples in my pocket: $g$ compares to a small threshold
+  \item There are some apples in my pocket: $g$ compares to a larger threshold
+  \item There are many apples in my pocket: $g$ compares to an even larger threshold
+  \item There are no apples in my pocket: $g = \lambda x_\N. x == 0$
+  \item There are exactly two apples in my pocket: $g = \lambda x_\N. x == 2$
+  \item * There are every apple in my pocket: $g$ has no access to the size of the first set
+  \item * There are almost every apple in my pocket: ditto
+  \item * There are most apples in my pocket: ditto
+  \item * There are not every apple in my pocket: you need the size of $a(x) \land \lnot b(x)$
+  \end{itemize}
+\item Negative polarity cases \emph{mostly} seems to correlate with downward monotonicity in the target,
+  though a lot of these judgements are unstable. There are also \textcolor{red}{counterexamples}.
+  \begin{itemize}
+  \item (Assume for all these cases that all apples are fruits.)
+  \item No person who has ever lived [\ldots]: if no fruits are red, then no apples are red
+  \item No person ever has lived: if no red things are fruits, then no red things are apples
+  \item Few people who have ever lived [\ldots]: if few fruits are red, then few apples are red
+  \item Few people have ever lived: if few red things are fruits, then few red things are apples
+  \item Every person who has ever lived [\ldots]: if every fruit is red, then every apple is red
+  \item * Every person has ever lived: * if every red thing is a fruit, then every red thing is an apple
+  \item * Some people who have ever lived [\ldots]: * if some fruits are red, then some apples are red
+  \item * Some people have ever lived: * if some red things are fruits, then some red things are
+    apples
+  \item * Many people who have ever lived [\ldots]: * if many fruits are red, then many apples are red
+  \item * Many people have ever lived: * if many red things are fruits, then many red things are
+    apples
+  \item \textcolor{red}{Almost every person who has ever lived [\ldots]: * if almost every fruit is red, then
+      almost every apple is red}
+  \item * Almost every person has ever lived: * if almost every red thing is a fruit, then almost
+    every red thing is an apple
+  \item \textcolor{red}{Most people who have ever lived [\ldots]: * if most fruits are red, then most apples are red}
+  \item * Most people have ever lived: * if most red things are fruits, then most red things are
+    apples
+  \item * Not every person who has ever lived [\ldots]: * if not every fruit is red, then not every apple is red
+  \item \textcolor{red}{* Not every person has ever lived: if not every red thing is a fruit, then not every
+      red thing is an apple}
+  \item * Exactly two people who have ever lived [\ldots]: * if exactly two fruits are red, then exactly two
+    apples are red
+  \item \textcolor{red}{Exactly two people have ever lived: * if exactly two red things are fruits, then exactly two red
+    things are apples}
   \end{itemize}
 \end{itemize}
 
