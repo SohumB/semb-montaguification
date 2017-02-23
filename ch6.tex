@@ -262,16 +262,22 @@
 \end{itemize}
 
 
-\section{Presuppositional behaviour of quantifiers}
+\section{Presuppositional behavior of quantifiers}
 \begin{itemize}
-\item Heim and Kratzer have assumed all quantifiers denote \emph{total functions}. That is, any quantifier \emph{Q} applied to an argument $\alpha$, will always have a semantic value. For example:
+\item Heim and Kratzer have assumed thus far that all quantifiers denote \emph{total functions}. That is, any quantifier \emph{Q} applied to an argument $\alpha$, will always have a semantic value. For example:
 \item $\forall x_e(\textsc{cat}_{et}(x) -> \textsc{purr}_{et}(x))$ \emph{Every cat purred} will be true in the case that all cats in the domain purred, and false otherwise. 
 \item As Heim and Kratzer note, however, the claim that all quantifiers are total functions predicts that they will not give rise to presupposition failures. 
 \end{itemize}
-
-
-
-
+\subsection{Quantifiers inducing presuppositions}
+\begin{itemize}
+\item There seem to be clear cases where the 'standard' analysis (i.e. total functions) of quantifiers fails to correctly correspond to speaker intuitions.
+\begin{itemize}
+\item \emph{Every American king lives in New York City}. This sentences should be true due to the fact that the restrictor of the quantifier is the empty set. Because there is no American king, the consequent of implication is vacuously satisfied. 
+\item \emph{I didn't see both cats}. This sentence is predicted to be true in a situation where there is only one cat and I saw it. 
+\end{itemize}
+\item \emph{Presuppositionality Hypothesis}: In natural languages, all lexical items with denotations of type ((e,t)(e,t))t» are presuppositional.
+\item Formally speaking, this requires that the restrictor of the quantifier not be empty: $\lambda P_{et}.\lambda P^\prime_{et}.\forall x_e(P(x) -> P^\prime(x))$ 
+\end{itemize}
 \end{document}
 
 %%% Local Variables:
