@@ -116,7 +116,7 @@
   \begin{tabular}{c c}
   \Tree [.t [.{(et)t} \emph{nothing} ] [.et \emph{vanished} ] ]
    &
-  \Tree [.t [.e \emph{Mary} ] [.et \emph{vanished} ] ]
+  \Tree [.t [.e \emph{Ann} ] [.et \emph{vanished} ] ]
    \\
   \end{tabular}
 \end{center}
@@ -170,8 +170,29 @@
 \subsection{Quantifiers aren't of type $et$}
 
 \begin{itemize}
-  \item Should also be upward entailing
-  \item Contradiction, Excluded middle + superset entailment should still hold
+  \item Suggestion: lift the type only a little bit and have quantifiers denote sets of individuals
+  \item have DPs of type $et$ and verbs of type $(et)t$
+  \item \emph{Ann} $~> \lambda x_e.x = \textsc{a}_e$\\
+        \emph{everything} $~> \lambda x_e.1$\\
+        \emph{nothing} $~> \lambda x_e.0$\\
+        % \emph{something} $~> \lambda x_e.\exists P_{et}.$
+        \emph{vanished} $~> \lambda P_{et}.\forall x_e.P(x) \rightarrow \textsc{vanish}_{et}(x)$
+  \item Problems with \emph{nothing}:
+  \begin{itemize}
+    \item It works for upward entailing quantifiers like \emph{everything}:\\
+    \Tree [.{$[\lambda P_{et}.\forall x_e.P(x) \rightarrow \textsc{vanish}_{et}(x)](\lambda x_e.1) \Leftrightarrow \forall x_e.1 \rightarrow \textsc{vanish}_{et}(x) \Leftrightarrow$ \textcolor{green}{$\forall x_e. \textsc{vanish}_{et}(x)$}}
+      [.{$\lambda x_e.1$} \emph{everything} ]
+      [.{$\lambda P_{et}.\forall x_e.P(x) \rightarrow \textsc{vanish}_{et}(x)$} \emph{vanished} ]
+      ]
+    \item It doesn't work for downward entailing quantifiers like \emph{nothing:}\\
+    \Tree [.{$[\lambda P_{et}.\forall x_e.P(x) \rightarrow \textsc{vanish}_{et}(x)](\lambda x_e.0)
+    \Leftrightarrow \forall x_e.0 \rightarrow \textsc{vanish}_{et}(x)
+    \Leftrightarrow$ \textcolor{red}{$\forall x_e.1$}}
+      [.{$\lambda x_e.0$} \emph{nothing} ]
+      [.{$\lambda P_{et}.\forall x_e.P(x) \rightarrow \textsc{vanish}_{et}(x)$} \emph{vanished} ]
+    ]
+    \item Because the empty set is a subset of every set, a sentence of the form \emph{\lq Nothing} V\emph{ed\rq} (for any verb V) would be trivially true.
+  \end{itemize}
 \end{itemize}
 
 
