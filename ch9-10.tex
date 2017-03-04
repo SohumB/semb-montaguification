@@ -1,0 +1,118 @@
+\def\swap{\leftrightarrow}
+\def\peq{\boxplus}
+\def\teq{\otimes}
+\def\xor{\oplus}
+\def\nimplies{\triangleright}
+\def\from{\gets}
+\def\real{\mathbb{R}}
+\def\rtnl{\mathbb{Q}}
+\def\cplx{\mathbb{C}}
+\def\setz{\mathbb{Z}}
+\def\exp{\mathbb{E}}
+\def\f{\mathbb{F}}
+\def\N{\mathcal{N}}
+\def\E{\mathbb{E}}
+\def\zplus{\setz^{+}}
+\def\nat{\mathbb{N}}
+\def\transpose{^\top}
+\def\kleene{^{*}}
+\def\const{\mathtt{C}}
+\def\p{\partial}
+\def\gl{{GL}}
+\def\sll{{SL}}
+\def\Ub{\mathbf{U}\ }
+\def\Sb{\mathbf{S}\ }
+\def\vt{\vartheta}
+\documentclass[a4paper]{article}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\alph{subsection}.}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\alph{enumii})}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thempfootnote}{\fnsymbol{mpfootnote}}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{euler,beton}
+\usepackage{algorithmic}
+\usepackage{fontspec}
+\usepackage[agsm]{harvard}
+\usepackage{hyperref}
+\usepackage{xunicode,xltxtra}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{semantic}
+%\usepackage{listings}
+%\usepackage{verbatim}
+\usepackage{color}
+%\usepackage{pgf,tikz}
+\usepackage{booktabs}
+\usepackage{fullpage}%\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{qtree}
+%\usetikzlibrary{trees,arrows,automata,shapes,positioning,calc}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{Semantics B \\ Chapter 6}
+\setmainfont[Ligatures={Common},ItalicFont = Linux Libertine O Italic]{Linux Libertine O}
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\tuple}[1]{\left\langle#1\right\rangle}
+\providecommand{\max}[1]{\max\left(#1\right)}
+\providecommand{\min}[1]{\min\left(#1\right)}
+\providecommand{\gen}[1]{\left\langle#1\right\rangle}
+\providecommand{\coltwo}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
+\providecommand{\msfour}[4]{\begin{bmatrix}#1 & #2 \\ #3 & #4\end{bmatrix}}
+\providecommand{\msnine}[9]{\begin{bmatrix}#1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{bmatrix}}
+\providecommand{\deduces}{\mathbin{\vdash}}
+\providecommand{\ddeduces}{\mathbin{\vdash\!\!\!\dashv}}
+\providecommand{\sch}[1]{\mathcal{#1}}
+\providecommand{\dimplies}{\Leftrightarrow}
+\providecommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\providecommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\renewcommand{\and}{\mathbin{\&}}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\impliedby}{\Leftarrow}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\infi}{inf}
+\DeclareMathOperator{\supre}{sup}
+\DeclareMathOperator{\round}{round}
+\DeclareMathOperator{\pascal}{pascal}
+\DeclareMathOperator{\dom}{domain}
+\DeclareMathOperator{\st}{s.t }
+\DeclareMathOperator{\argmax}{arg\ max}
+\providecommand{\Resc}{\Res\kleene}
+\newtheorem{lemma}{Lemma}
+\newtheorem{sublemma}{Sublemma}
+\sectionfont{\pagebreak[3]}
+\subsectionfont{\pagebreak[2]}
+\reservestyle{\csyms}{\mathcal}
+\csyms{A,B,C,D}
+\mathlig{|}{\mid}
+\mathlig{==}{\equiv}
+\mathlig{~>}{\rightsquigarrow}
+\mathlig{~=}{\approx}
+\mathlig{~}{\lnot}
+\mathlig{|->}{\mapsto}
+\mathlig{||-}{\Vdash}
+\mathlig{<F>}{\langle{}F \rangle}
+\mathlig{|/=}{\nvDash}
+
+\title{H\&K Chapters 9, 10}
+\author{Sohum Banerjea, Andrew Hedding, Lisa Hofmann}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+\end{document}
+
+%%% Local Variables:
+%%% mode: xetex
+%%% TeX-master: t
+%%% TeX-engine: xetex
+%%% End:
