@@ -42,6 +42,8 @@
 \usepackage{multicol}
 \usepackage{stmaryrd}
 \usepackage{semantic}
+\usepackage{qtree}
+\usepackage{tikz-qtree-compat}
 %\usepackage{listings}
 %\usepackage{verbatim}
 \usepackage{color}
@@ -145,7 +147,31 @@
 \end{itemize}
 
 \section{Pronouns and Ellipsis}
-
+\Tree 		[.S
+				[.S
+					[.Laura ]
+					[.S$\prime$
+						[.$\lbrack$\textsc{past}$\rbrack$ ]
+						[.VP
+							[.leave ]
+							[.Texas ]
+						]		
+					]
+				]	
+				[.S 
+					[.ConjP	but ]
+					[.S	
+						[.Lena ]
+						[.S$\prime$
+							[.didn't ]
+							[.$\langle$VP$\rangle$
+								[.$\langle$leave$\rangle$ ]
+								[.$\langle$Texas$\rangle$ ]
+							]
+						]
+					]
+				]
+			]					
 \section{Syntactic and semantic binding}
 
 \subsection{Chapter overview}
