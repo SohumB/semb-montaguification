@@ -179,38 +179,33 @@
 \begin{itemize}
 \item Ellipsis requires an identical form at LF, and the antecedent licenses optional deletion of the duplicated VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
 \item Crucially, the elided material must have an identical LF representation, not only an identical surface string. 
-\item Elided material cannot be interpreted with a different scope reading than it's antecedant.
+\item Elided material cannot be interpreted with a different scope reading than it's antecedent.
 \begin{itemize}
 \item Laura showed a drawing to every teacher, but Lena didn't.
-\end{itemize}	
 \end{itemize}
-			
+\item \textbf{Cannot be interpreted as:} Laura showed exactly one drawing to every teacher and Lena didn't show exactly one drawing to each teacher, in fact she showed each teacher a different drawing. 
+\item Bare Argument Ellipsis involves eliding an entire sentence after one argument has been topicalized. For example:	
+\end{itemize}			
 \Tree 	[.S
 			[.S
-				[.{the milk} ]
-				[.S$\prime$
-					[.\emph{1} ]
-					[.S
-						[.Laura ]
-						[.VP
-							[.drank ]
-							[.\emph{t_1} ]
-						]	
-					]		
-				]
+				[.$\lbrack${the milk}$\rbrack^x$ ]
+				[.S
+					[.Laura ]
+					[.VP
+						[.drank ]
+						[.$x$ ]
+					]	
+				]		
 			]		
 			[.S	
 				[.{or perhaps} ]
 				[.S
-					[.{the juice} ]
-					[.S$\prime$
-						[.\emph{1} ]
-						[.$\langle$S$\rangle$
-							[.$\langle$Lena$\rangle$ ]
-							[.$\langle$VP$\rangle$
-								[.$\langle$drank$\rangle$ ]
-								[.$\langle$\emph{t_1}$\rangle$ ]
-							]
+					[.$\lbrack${the juice}$\rbrack^y$ ]
+					[.$\langle$S$\rangle$
+						[.$\langle$Lena$\rangle$ ]
+						[.$\langle$VP$\rangle$
+							[.$\langle$drank$\rangle$ ]
+							[.$\langle y\rangle$ ]
 						]
 					]
 				]
