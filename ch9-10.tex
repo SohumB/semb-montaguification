@@ -40,6 +40,7 @@
 \usepackage{graphicx}
 \usepackage{sectsty}
 \usepackage{multicol}
+\usepackage{stmaryrd}
 \usepackage{semantic}
 %\usepackage{listings}
 %\usepackage{verbatim}
@@ -56,7 +57,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \lfoot{}
 \cfoot{\thepage}
-\rfoot{Semantics B \\ Chapter 6}
+\rfoot{Semantics B \\ Chapters 9,10}
 \setmainfont[Ligatures={Common},ItalicFont = Linux Libertine O Italic]{Linux Libertine O}
 \providecommand{\abs}[1]{\left\lvert#1\right\rvert}
 \providecommand{\norm}[1]{\left\lVert#1\right\rVert}
@@ -101,6 +102,8 @@
 \mathlig{||-}{\Vdash}
 \mathlig{<F>}{\langle{}F \rangle}
 \mathlig{|/=}{\nvDash}
+\mathlig{[|}{\llbracket}
+\mathlig{|]}{\rrbracket}
 
 \title{H\&K Chapters 9, 10}
 \author{Sohum Banerjea, Andrew Hedding, Lisa Hofmann}
@@ -112,9 +115,179 @@
 \maketitle
 
 \section{Bound and referential pronouns}
+\subsection{Deixis/Anaphora vs Reference/Binding}
+\begin{itemize}
+\item Describing pronoun behaviour
+  \begin{enumerate}
+  \item (After John has left the room) I am glad he\textsuperscript{deictic, referring} is gone.
+  \item No one likes John. Let's not invite him\textsuperscript{anaphoric, referring}.
+  \item Every man is to clean his\textsuperscript{anaphoric, bound} uniform.
+  \end{enumerate}
+\item These are clearly different categorisations of pronoun behaviour
+\item But referring/bound is a useful \emph{semantic} categorisation, in a way deixis/anaphora is not.
+\item Bound pronouns use coindexing at syntax and are thus bound semantically in the generated LF
+\item Referring pronouns work via salience, and are thus free variables in the generated LF
+  \begin{itemize}
+  \item (whether salience is extralinguistic or because the anaphora has been recently mentioned)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Referring pronouns}
+\begin{itemize}
+\item Referring pronouns thus need the utterance context to provide their variables for the LF to be
+  well-defined
+\item Capture this by saying that $g$ needs to define any free variables in the LF (``appropriateness'')
+\item You can even capture pronoun features, by extending $D_e$ and $D_t$ with failure (call it $\#$) and the
+  language with conditioning
+
+  \Tree[. [.{[third person]} ] [. [.{[feminine]} ] [. [.{[singular]} ] [.{she\textsubscript{1}} ] ] ] ]
+\item $[|1|] = [|\lambda x.\ \lambda y.\ x|]$ and $[|0|]= [|\lambda x.\ \lambda y.\ y|]$ (Church encoding of booleans)
+\item $[feminine] ~> \lambda x_e.\ \textsc{female}(x)\ x\ \#$
+\end{itemize}
+
+\subsection{Bound pronouns}
+\begin{itemize}
+\item Bound pronouns show up in quantifiers, as we've seen
+\item But there are many other cases where bound variables show up in LFs
+\item \Tree[. [. [.{The} ] [. [.{[dog]\textsubscript{x}} ] [.{that greeted his\textsubscript{x} master} ] ] ] [.{was fed}
+  ] ]
+\item The bound variable analysis here correctly generates ``that greeted his master'' as a reflexive
+  condition to be satisfied under the definiteness claim
+\item Any referential analysis would have ``his master'' refer to one particular person in the utterance
+  context, and thus never generate the reflexive condition
+\item The theory also predicts ``invisible'' ambiguity, between bound and free variables, in some cases
+  \begin{itemize}
+  \item John hates his\textsubscript{x} father
+    \begin{itemize}
+      \item The free variable can easily pick out John; he's salient by virtue of having just been mentioned!
+    \end{itemize}
+  \item $\lbrack$John$\rbrack$\textsuperscript{x} t\textsubscript{x} hates his\textsubscript{x} father
+  \end{itemize}
+  \item Or is it so invisible?…
+\end{itemize}
 
 \section{Pronouns and Ellipsis}
+\begin{itemize}
+\item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka 'stripping')
+\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be 'free' (referring to a salient entity in context) or bound by the trace of QR.  
+\end{itemize}
+\subsection{VP Ellipsis}
+\begin{itemize}
+\item VP ellipsis involves deleting a VP that has an identical antecedent. For example:
+\end{itemize}
+\Tree 		[.S
+				[.S
+					[.Laura ]
+					[.S$\prime$
+						[.$\lbrack$\textsc{past}$\rbrack$ ]
+						[.VP
+							[.leave ]
+							[.Texas ]
+						]		
+					]
+				]	
+				[.S 
+					[.but ]
+					[.S	
+						[.Lena ]
+						[.S$\prime$
+							[.didn't ]
+							[.$\langle$VP$\rangle$
+								[.$\langle$leave$\rangle$ ]
+								[.$\langle$Texas$\rangle$ ]
+							]
+						]
+					]
+				]
+			]		
+\begin{itemize}
+\item Ellipsis requires an identical form at LF, and the antecedent licenses optional deletion of the duplicated VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
+\begin{itemize}
+\item \emph{LF Identity Condition on Ellipsis}: A Constituent may be deleted at PF only if it is a copy of another constituent at LF.	
+\end{itemize}
+\item Crucially, the elided material must have an identical LF representation, not only an identical surface string. 
+\item Elided material cannot be interpreted with a different scope reading than its antecedent.
+\begin{itemize}
+\item Laura showed a drawing to every teacher, but Lena didn't.
+\end{itemize}
+\item \textbf{This cannot be interpreted as:} Laura showed exactly one drawing to every teacher and Lena didn't show exactly one drawing to each teacher, in fact she showed each teacher a different drawing. 
+\end{itemize}
+\subsection{Bare Argument Ellipsis}
+\begin{itemize}
+\item Bare Argument Ellipsis involves eliding an entire sentence after one argument has been topicalized. The corresponding argument in the antecedent must be QR'ed in order to create an identical LF for ellipsis. For example:	
+\end{itemize}			
+\Tree 	[.S
+			[.S
+				[.$\lbrack${the milk}$\rbrack^x$ ]
+				[.S
+					[.Laura ]
+					[.VP
+						[.drank ]
+						[.$x$ ]
+					]	
+				]		
+			]		
+			[.S	
+				[.{or perhaps} ]
+				[.S
+					[.$\lbrack${the juice}$\rbrack^x$ ]
+					[.$\langle$S$\rangle$
+						[.$\langle$Lena$\rangle$ ]
+						[.$\langle$VP$\rangle$
+							[.$\langle$drank$\rangle$ ]
+							[.$\langle x\rangle$ ]
+						]
+					]
+				]
+			]
+		]		
+\subsection{Referential Pronouns}
+\begin{itemize}
+\item Pronouns may be free (in which case they are understood according to context) or bound by an anaphor.
+\item \textbf{Context:} It is Roman's birthday...
+\begin{itemize}
+\item Phillip went to his office.
+\end{itemize}
+\item \emph{his} could be interpreted as referring to Roman or Phillip. 
+\item When ellipsis is added, the bound or free interpretation must be maintained.
+\begin{itemize}
+\item Phillip went to his office. Marcel didn't.
+\end{itemize}
+\item \textbf{This cannot mean:} Phillip went to Roman's office and Marcel didn't go to his own office. 
+\item This possibility is maintained without another stipulation, for example:
+\end{itemize}
+\begin{multicols}{2}	
+\Tree	[.S
+			[.Phillip ]
+			[.TP	
+				[.$\lbrack$\textsc{past}$\rbrack$ ]	
+				[.VP
+					[.{go to} ]
+					[.{his_1 office} ]
+				]
+			]
+		]
 
+\Tree	[.S
+			[.$\lbrack$Marcel$\rbrack^x$ ]
+			[.S	
+				[.$x$ ]	
+				[.TP
+					[.didn't ]
+					[.$\langle$VP$\rangle$
+						[.$\langle${go to}$\rangle$ ]
+						[.$\langle${his_1 office}$\rangle$ ]
+					]
+				]
+			]
+		]
+\end{multicols}		
+\begin{itemize}
+\item H \& K solve this problem with the following solution: 
+\begin{itemize}
+\item No LF representation (for a sentence or multisentential text) must contain both bound occurrences and free occurrences of the same index.
+\end{itemize}
+\end{itemize}				
 \section{Syntactic and semantic binding}
 
 \begin{itemize}
