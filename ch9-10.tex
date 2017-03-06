@@ -133,11 +133,11 @@
   well-defined
 \item Capture this by saying that $g$ needs to define any free variables in the LF (``appropriateness'')
 \item You can even capture pronoun features, by extending $D_e$ and $D_t$ with failure (call it $\#$) and the
-  language with $if$
+  language with conditioning
 
   \Tree[. [.{[third person]} ] [. [.{[feminine]} ] [. [.{[singular]} ] [.{she\textsubscript{1}} ] ] ] ]
-\item $[|if(b,t,f)|] = [|t|]$ iff $[|b|]$, $[|f|]$ otherwise
-\item $[feminine] ~> \lambda x_e.\ if(\textsc{female}(x), x, \#)$
+\item $[|1|] = [|\lambda x.\ \lambda y.\ x|]$ and $[|0|]= [|\lambda x.\ \lambda y.\ y|]$ (Church encoding of booleans)
+\item $[feminine] ~> \lambda x_e.\ \textsc{female}(x)\ x\ \#$
 \end{itemize}
 
 \section{Pronouns and Ellipsis}
