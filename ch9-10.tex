@@ -149,6 +149,10 @@
 \section{Pronouns and Ellipsis}
 \begin{itemize}
 \item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka 'stripping')
+\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be 'free' (referring to a salient entity in context) or bound by the trace of QR.  
+\end{itemize}
+\subsection{VP Ellipsis}
+\begin{itemize}
 \item VP ellipsis involves deleting a VP that has an identical antecedent. For example:
 \end{itemize}
 \Tree 		[.S
@@ -178,12 +182,18 @@
 			]		
 \begin{itemize}
 \item Ellipsis requires an identical form at LF, and the antecedent licenses optional deletion of the duplicated VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
+\begin{itemize}
+\item \emph{LF Identity Condition on Ellipsis}: A Constituent may be deleted at PF only if it is a copy of another constituent at LF.	
+\end{itemize}
 \item Crucially, the elided material must have an identical LF representation, not only an identical surface string. 
-\item Elided material cannot be interpreted with a different scope reading than it's antecedent.
+\item Elided material cannot be interpreted with a different scope reading than its antecedent.
 \begin{itemize}
 \item Laura showed a drawing to every teacher, but Lena didn't.
 \end{itemize}
-\item \textbf{Cannot be interpreted as:} Laura showed exactly one drawing to every teacher and Lena didn't show exactly one drawing to each teacher, in fact she showed each teacher a different drawing. 
+\item \textbf{This cannot be interpreted as:} Laura showed exactly one drawing to every teacher and Lena didn't show exactly one drawing to each teacher, in fact she showed each teacher a different drawing. 
+\end{itemize}
+\subsection{Bare Argument Ellipsis}
+\begin{itemize}
 \item Bare Argument Ellipsis involves eliding an entire sentence after one argument has been topicalized. The corresponding argument in the antecedent must be QR'ed in order to create an identical LF for ellipsis. For example:	
 \end{itemize}			
 \Tree 	[.S
@@ -210,7 +220,54 @@
 					]
 				]
 			]
-		]				
+		]		
+\subsection{Referential Pronouns}
+\begin{itemize}
+\item Pronouns may be free (in which case they are understood according to context) or bound by an anaphor.
+\item \textbf{Context:} It is Roman's birthday...
+\begin{itemize}
+\item Phillip went to his office.
+\end{itemize}
+\item \emph{his} could be interpreted as referring to Roman or Phillip. 
+\item When ellipsis is added, the bound or free interpretation must be maintained.
+\begin{itemize}
+\item Phillip went to his office. Marcel didn't.
+\end{itemize}
+\item \textbf{This cannot mean:} Phillip went to Roman's office and Marcel didn't go to his own office. 
+\item This possibility is maintained without another stipulation, for example:
+\end{itemize}
+\begin{multicols}{2}	
+\Tree	[.S
+			[.Phillip ]
+			[.TP	
+				[.$\lbrack$\textsc{past}$\rbrack$ ]	
+				[.VP
+					[.{go to} ]
+					[.{his_1 office} ]
+				]
+			]
+		]
+
+\Tree	[.S
+			[.$\lbrack$Marcel$\rbrack^x$ ]
+			[.S	
+				[.$x$ ]	
+				[.TP
+					[.didn't ]
+					[.$\langle$VP$\rangle$
+						[.$\langle${go to}$\rangle$ ]
+						[.$\langle${his_1 office}$\rangle$ ]
+					]
+				]
+			]
+		]
+\end{multicols}		
+\begin{itemize}
+\item H \& K solve this problem with the following solution: 
+\begin{itemize}
+\item No LF representation (for a sentence or multisentential text) must contain both bound occurrences and free occurrences of the same index.
+\end{itemize}
+\end{itemize}				
 \section{Syntactic and semantic binding}
 
 \subsection{Chapter overview}
