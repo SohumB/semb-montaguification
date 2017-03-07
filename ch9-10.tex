@@ -172,17 +172,18 @@
 
 \section{Pronouns and Ellipsis}
 \begin{itemize}
-\item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka 'stripping')
-\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be 'free' (referring to a salient entity in context) or bound by the trace of QR.  
+\item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka ``stripping'')
+\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be ``free'' (referring to a salient entity in context) or bound by the trace of QR.  
+\item This indicates that the ``invisible'' ambiguity predicted by the theory is supported by empirical evidence.
 \end{itemize}
 \subsection{VP Ellipsis}
 \begin{itemize}
 \item VP ellipsis involves deleting a VP that has an identical antecedent. For example:
 \end{itemize}
 \Tree 		[.S
-				[.S
+				[.
 					[.Laura ]
-					[.S$\prime$
+					[.
 						[.$\lbrack$\textsc{past}$\rbrack$ ]
 						[.VP
 							[.leave ]
@@ -190,11 +191,11 @@
 						]		
 					]
 				]	
-				[.S 
+				[.
 					[.but ]
-					[.S	
+					[.
 						[.Lena ]
-						[.S$\prime$
+						[.
 							[.didn't ]
 							[.$\langle$VP$\rangle$
 								[.$\langle$leave$\rangle$ ]
@@ -205,35 +206,35 @@
 				]
 			]		
 \begin{itemize}
-\item Ellipsis requires an identical form at LF, and the antecedent licenses optional deletion of the duplicated VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
+\item The identity of the two VPs at LF licenses optional deletion of the second VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
 \begin{itemize}
-\item \emph{LF Identity Condition on Ellipsis}: A Constituent may be deleted at PF only if it is a copy of another constituent at LF.	
+\item \emph{LF Identity Condition on Ellipsis}: A constituent may be deleted at PF only if it is a copy of another constituent at LF.	
 \end{itemize}
 \item Crucially, the elided material must have an identical LF representation, not only an identical surface string. 
 \item Elided material cannot be interpreted with a different scope reading than its antecedent.
 \begin{itemize}
 \item Laura showed a drawing to every teacher, but Lena didn't.
 \end{itemize}
-\item \textbf{This cannot be interpreted as:} Laura showed exactly one drawing to every teacher and Lena didn't show exactly one drawing to each teacher, in fact she showed each teacher a different drawing. 
+\item \textbf{This cannot be interpreted as:} Laura showed every teacher some drawing (not necessarily the same one) and Lena didn't show exactly one drawing to every teacher (but maybe she showed each teacher a different drawing). 
 \end{itemize}
 \subsection{Bare Argument Ellipsis}
 \begin{itemize}
 \item Bare Argument Ellipsis involves eliding an entire sentence after one argument has been topicalized. The corresponding argument in the antecedent must be QR'ed in order to create an identical LF for ellipsis. For example:	
 \end{itemize}			
 \Tree 	[.S
-			[.S
+			[.
 				[.$\lbrack${the milk}$\rbrack^x$ ]
 				[.S
 					[.Laura ]
-					[.VP
+					[.
 						[.drank ]
 						[.$x$ ]
 					]	
 				]		
 			]		
-			[.S	
+			[.	
 				[.{or perhaps} ]
-				[.S
+				[.
 					[.$\lbrack${the juice}$\rbrack^x$ ]
 					[.$\langle$S$\rangle$
 						[.$\langle$Laura$\rangle$ ]
@@ -244,10 +245,14 @@
 					]
 				]
 			]
-		]		
+		]
+\begin{itemize}
+\item Once \emph{the milk} has been QR'ed, then there are two identical subparts of the tree (\emph{Laura drank x}). This licenses ellipsis.	
+\end{itemize}
+		
 \subsection{Referential Pronouns}
 \begin{itemize}
-\item Pronouns may be free (in which case they are understood according to context) or bound by an anaphor.
+\item Elided phrases can also contain pronouns. The interpretation of ellipsis demonstrates that pronouns can be bound by an anaphor, or they can be free and refer to a salient entity. 
 \item \textbf{Context:} It is Roman's birthday...
 \begin{itemize}
 \item Phillip went to his office.
@@ -258,46 +263,119 @@
 \item Phillip went to his office. Marcel didn't.
 \end{itemize}
 \item \textbf{This cannot mean:} Phillip went to Roman's office and Marcel didn't go to his own office. 
-\item This possibility is maintained without another stipulation, for example:
+\item The theory of ellipsis developed thus far cannot account for this fact. For example:
 \end{itemize}
 \begin{multicols}{2}	
 \Tree	[.S
 			[.Phillip ]
-			[.TP	
+			[.	
 				[.$\lbrack$\textsc{past}$\rbrack$ ]	
 				[.VP
 					[.{go to} ]
-					[.{his_1 office} ]
+					[.{his_x office} ]
 				]
 			]
 		]
 
 \Tree	[.S
 			[.$\lbrack$Marcel$\rbrack^x$ ]
-			[.S	
+			[.	
 				[.$x$ ]	
-				[.TP
+				[.
 					[.didn't ]
 					[.$\langle$VP$\rangle$
 						[.$\langle${go to}$\rangle$ ]
-						[.$\langle${his_1 office}$\rangle$ ]
+						[.$\langle${his_x office}$\rangle$ ]
 					]
 				]
 			]
 		]
 \end{multicols}		
 \begin{itemize}
+\item In this example, \emph{his} is a free variable in the first sentence and it derives its meaning from context. In the second sentence, \emph{his} is bound by Marcel. 
+\item This predicts the impossible meaning that Phillip went to Roman's office and Marcel didn't go to his own office.	
 \item H \& K solve this problem with the following solution: 
 \begin{itemize}
 \item No LF representation (for a sentence or multisentential text) must contain both bound occurrences and free occurrences of the same index.
 \end{itemize}
-\end{itemize}	
 
+\end{itemize}
+\subsection{Strict and Sloppy Readings}
+\begin{itemize} 
+\item Variable binding can also help to elucidate the ``sloppy reading puzzle''.	
+\begin{itemize}
+\item Phillip went to his office. Marcel didn't.
+\end{itemize}
+\item \textbf{This can mean either:} Marcel didn't go to Phillip's office, or he didn't go to his own office.
+\item If both instances of the variable are free, then the pronoun will be interpreted according to context.
+\begin{multicols}{2}	
+\Tree	[.S
+			[.Phillip ]
+			[.	
+				[.$\lbrack$\textsc{past}$\rbrack$ ]	
+				[.VP
+					[.{go to} ]
+					[.{his_x office} ]
+				]
+			]
+		]
 
+\Tree	[.S
+			[.Marcel ]	
+			[.
+				[.didn't ]
+				[.$\langle$VP$\rangle$
+					[.$\langle${go to}$\rangle$ ]
+					[.$\langle${his_x office}$\rangle$ ]
+				]
+			]
+		]
+\end{multicols}	
+\item The first free variable will be interpreted according to the context. If Phillip is the most salient entity it will refer to him. Additionally, H \& K argue that if a free variable is elided it cannot fail to co-refer with the the remnant free variable.
+\item Referential pronouns keep their reference under ellipsis.  
+\item Alternatively, both pronouns can be bound, leading to the reading that Marcel didn't go to his own office.
+\end{itemize}
+\begin{multicols}{2}	
+\Tree	[.S
+			[.$\lbrack$Phillip$\rbrack^x$ ]
+			[.	
+				[.$x$ ]	
+				[.
+					[.$\lbrack$\textsc{past}$\rbrack$ ]	
+					[.VP
+						[.{go to} ]
+						[.{his_x office} ]
+					]
+				]
+			]
+		]
 
-
-
-
+\Tree	[.S
+			[.$\lbrack$Marcel$\rbrack^x$ ]
+			[.	
+				[.$x$ ]	
+				[.
+					[.didn't ]
+					[.$\langle$VP$\rangle$
+						[.$\langle${go to}$\rangle$ ]
+						[.$\langle${his_x office}$\rangle$ ]
+					]
+				]
+			]
+		]
+\end{multicols}	
+\begin{itemize}
+\item The Binding Principle predicts that the sloppy reading will be grammatical in just those cases where the pronoun is bound syntactically by a preceding anaphor. This indicates a bound variable at LF. 
+\begin{itemize}
+\item His father spoils Roman, but not Felix. 
+\end{itemize}
+\item \textbf{This cannot mean:} Roman's father spoils Roman but Felix's father doesn't spoil Felix.  
+\item Additionally, Binding theory predicts that the ``strict'' reading will be impossible in cases where the pronoun must be bound, such as reciprocals.
+\begin{itemize}
+\item Ann hurt herself, and Mary (did) too.
+\end{itemize}
+\end{itemize}
+			
 \section{Syntactic and semantic binding}
 
 H \& K tie semantic binding to QR:
@@ -442,7 +520,7 @@ H \& K tie semantic binding to QR:
 \vspace{2\baselineskip}
 \begin{itemize}
 	\item Evidence that semantic binding ($\lambda$-abstraction) requires syntactic binding (c-command + coindexation)
-	\item However, we can get both scopal readings in a case like (\ref{weakcr}), better seen with a non-definite subject (e.g. (\ref{weakcramb}))
+	\item However, we can get both scopal readings in a case like (\ref{weakcr}), better seen with a non-definite subject\\(e.g. (\ref{weakcramb}))
 \end{itemize}
 
 \begin{exe}
