@@ -42,6 +42,7 @@
 \usepackage{multicol}
 \usepackage{stmaryrd}
 \usepackage{semantic}
+\usepackage{tikz}
 %\usepackage{listings}
 %\usepackage{verbatim}
 \usepackage{color}
@@ -50,8 +51,11 @@
 \usepackage{fullpage}%\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{qtree}
+\tikzset{every tree node/.style={align=center, anchor=north}}
+% \usepackage{tikz-qtree-compat}
 \usepackage{gb4e}
-%\usetikzlibrary{trees,arrows,automata,shapes,positioning,calc}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{trees,arrows,automata,shapes,positioning,calc}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
@@ -142,7 +146,7 @@
 
   \Tree[. [.{[third person]} ] [. [.{[feminine]} ] [. [.{[singular]} ] [.{she\textsubscript{1}} ] ] ] ]
 \item $[|1|] = [|\lambda x.\ \lambda y.\ x|]$ and $[|0|]= [|\lambda x.\ \lambda y.\ y|]$ (Church encoding of booleans)
-\item $[feminine] ~> \lambda x_e.\ \textsc{female}(x)\ x\ \#$
+\item $[feminine] ~> \lambda x_e.\ [\textsc{female}_{et}(x)](x)(\#)$
 \end{itemize}
 
 \subsection{Bound pronouns}
@@ -232,7 +236,7 @@
 				[.S
 					[.$\lbrack${the juice}$\rbrack^x$ ]
 					[.$\langle$S$\rangle$
-						[.$\langle$Lena$\rangle$ ]
+						[.$\langle$Laura$\rangle$ ]
 						[.$\langle$VP$\rangle$
 							[.$\langle$drank$\rangle$ ]
 							[.$\langle x\rangle$ ]
@@ -287,34 +291,250 @@
 \begin{itemize}
 \item No LF representation (for a sentence or multisentential text) must contain both bound occurrences and free occurrences of the same index.
 \end{itemize}
-\end{itemize}				
+\end{itemize}	
+
+
+
+
+
+
 \section{Syntactic and semantic binding}
 
+H \& K tie semantic binding to QR:
+
+\begin{tabular}{p{.5\linewidth} p{.5\linewidth}}
+	\Tree [.S DP$_x$ [ {$\lambda x$} \qroof{\dots $t_x$\dots}.{} ] ]
+
+	&
+		\begin{tabular}{l}
+			$t_x ~> g(x)$\\
+			$x ~> \lambda p_{t}.\lambda x_e.p$\\
+			DP$_x ~>$ DP$^{~>}$\\
+			S $~> [DP$^{~>}$] (\lambda x_e.p)$ or $[\lambda x_e.p] (DP$^{~>}$)$
+		\end{tabular}
+	\\
+\end{tabular}
+
+\noindent In class, we allowed for semantic binding without QR:
+
+\begin{tabular}{p{.5\linewidth} p{.5\linewidth}}
+	\Tree [.S DP$^x$ \qroof{\dots $t_x$\dots}.{}  ]
+
+	&
+		\begin{tabular}{l}
+			$t_x ~> g(x)$\\
+			DP$_x ~>$ DP$^{~>}$\\
+			S $~> [DP$^{~>}$] (\lambda x_e.p)$ or $[\lambda x_e.p] (DP$^{~>}$)$
+		\end{tabular}
+	\\
+\end{tabular}
+
+
+
 \begin{itemize}
-	\item \emph{Syntactic binding:}
-	\begin{itemize}
-		\item c-command and coindexation
-		\item \Tree [ {every diver$_x$}  [ defended themselves$_x$ ] ]
-		\item the DP \lq {every diver$_x$}\rq 
-	\end{itemize}
-	\item suppose: indices of pronouns (and the variables they get translated to) are present in surface syntax
-	\item index required for semantic interpretability and precondition for movement
+	\item Suppose: indices of pronouns (and the variables they get translated to) are present in surface syntax.
+	\item Rationalization: Index as condition for semantic interpretability of pronouns and condition for movement (will supply pronoun label for trace).
+	\item Goal: Then we can talk about the relationship of syntactic and semantic binding.
 \end{itemize}
 
-% \begin{exe}
-% 	\ex \emph{Binding theory:}
-% 	\begin{xlist}
-% 		\ex Reflexive pronouns must be bound in their binding domain.
-% 		\ex All other pronouns must be free in their binding domain.
-% 		\ex All non-pronominal DPs must be free.
-% 	\end{xlist}
-% \end{exe}
+
+\subsection{Syntactic binding:}
+
+	\begin{itemize}
+		\item c-command and coindexation
+	\end{itemize}
+	\begin{exe}
+		\ex \label{synbind} \Tree [ {every diver$_x$}  [ defended themselves$_x$ ] ]
+	\end{exe}
+	\begin{itemize}
+		\item The DP \lq {every diver$_x$}\rq\ \emph{syntactically binds} the reflexive pronoun \lq themselves$_x$\rq.
+	\end{itemize}
+
+\subsection{Semantic binding (H\&K):}
+	\begin{itemize}
+		\item Variable binding with operators:
+		\item A DP $\alpha$ \emph{semantically binds} a DP $\beta$ iff the variable introduced as the referent of $\beta$ is bound by a variable binder introduced by $\alpha$.
+		\item In (\ref{synbind}), \lq themselves$_x$\rq\ is not semantically bound in H\&K's theory. (No $\lambda$-abstraction without QR)
+	\end{itemize}
+	\begin{exe}
+		\ex \label{sembind} \Tree [ {every diver$_x$} [ $\lambda x$ [ t$_x$  [ defended themselves$_x$ ] ] ] ]
+	\end{exe}
+	
+\begin{itemize}
+	% \item In H \& K, $\lambda$-abstraction requires QR. Accordingly, the pronoun themselves$_x$ is semantically bound in 
+	\item A system that allows for $\lambda$-abstraction without QR and accounts for quantifier scope with type-shifting (and doesn't allow QR) predicts a tight correspondence between semantic and syntactic binding.
+	\item In fact, we find that they semantic and syntactic binding correlate.
+\end{itemize}
+
+\subsection{Syntactic binding principles constrain interpretation}
+
+\begin{exe}
+	\ex Syntactic binding principles:
+	\begin{xlist}
+		\ex Reflexive (and reciprocal) pronouns must be bound in their binding domain.
+		\ex All other pronouns must be free in their binding domain.
+		\ex All non-pronominal DPs must be free.
+	\end{xlist}
+\end{exe}
+
+\begin{itemize}
+	\item No bound reading for proper names:
+\end{itemize}
+
+\begin{exe}
+	\ex \emph{His father spoils Roman, but not Felix.}
+\end{exe}
+
+\begin{itemize}
+	\item Bound or referential reading for pronouns. (Strict vs. sloppy identity):
+\end{itemize}
+
+\begin{exe}
+	\ex \label{pron} \emph{On Roman's birthday Phillip went to his office. Marcel didn't.}
+\end{exe}
+
+\begin{itemize}
+	\item Two possible readings for (\ref{pron}): Marcel went to Roman's office vs. Marcel went to Phillips office vs. Marcel went to his own office.
+	\item Only bound reading for reflexives, i.e. sloppy identity.
+\end{itemize}
+
+\begin{exe}
+	\ex \emph{Phillip hurt himself. Marcel didn't.}
+\end{exe}
+\begin{itemize}
+	\item Only bound reading: Marcel didn't hurt himself. But not: Marcel didn't hurt Phillip.
+	\item[$=>$] Syntactic and semantic binding have to coincide
+	\item H\&K have to stipulate that as a constraint on QR
+	\item But we see cross-over effects constraining overt kinds of syntactic movement as well
+\end{itemize}
+
 
 
 
 \subsection{Weak crossover}
 
+\begin{exe}
+	\ex \label{weakcr} \emph{*The shark next to him$_x$ attacked $[$every diver$]_x$.}
+\end{exe}
 
+\begin{itemize}
+	\item The quantifier $[$every diver$]_x$ cannot bind him$_x$
+	\item Constraint on QR: cannot move across co-indexed pronoun (cross-over)
+\end{itemize}
+
+% \begin{exe}
+% 	\ex \emph{*The shark next to him$_x$ attacked $[$every diver$]_x$.}\\
+% 	\begin{tikzpicture}
+% 		\Tree [.S \node(1){$[$every diver$]x$}; [.S [ the [shark [next \node(3){to him$_x$}; ] ] ] [ attacked \node(2){t$_x$}; ] ] ]
+% 		\node (s1) [below=1cm of 1] {};
+% 		\node (s2) [below=1cm of 2] {};
+% 		\draw[dotted, ->] (2)..controls +(south:5) and +(south:5)..(1) node[midway,below] {\tiny QR blocked};
+% 		\node (s3) [below right=1cm of 3] {\tiny intervention};
+% 		\draw (3.east) -- (s3);
+% 	\end{tikzpicture}
+% \end{exe}
+
+\begin{exe}
+	\ex \emph{*The shark next to him$_x$ attacked $[$every diver$]_x$.}\\
+		\Tree [.S {$[$every diver$]x$} [.S [ the [shark [next {to him$_x$} ] ] ] [ attacked t$_x$ ] ] ]
+\end{exe}
+
+\vspace{2\baselineskip}
+\begin{itemize}
+	\item Evidence that semantic binding ($\lambda$-abstraction) requires syntactic binding (c-command + coindexation)
+	\item However, we can get both scopal readings in a case like (\ref{weakcr}), better seen with a non-definite subject (e.g. (\ref{weakcramb}))
+\end{itemize}
+
+\begin{exe}
+	\ex \label{weakcramb} \emph{One of the sharks next to him attacked every diver.}
+\end{exe}
+
+\begin{itemize}
+	\item Two scope readings available without binding
+	\begin{itemize}
+		\item High scope ($\forall > 1$):\\
+		$\forall y_e.(\textsc{diver}_{et}(y) \rightarrow \exists z.(\textsc{shark}_{et}(z) \land \textsc{next}_{eet}(x)(z) \land \textsc{attack}_{eet}(y)(z))) $\\
+		True if every diver got attacked by at least one (potentially different) shark.
+
+	\item Low scope ($1 > \forall$):\\
+		$\exists z.(\textsc{shark}_{et}(z) \land \textsc{next}_{eet}(x)(z) \land \forall y_e.(\textsc{diver}_{et}(y) \rightarrow \textsc{attack}_{eet}(y)(z)))$\\
+		True if one unique shark attacked every diver.
+	\end{itemize}
+	\item[$=>$] Untie quantifier scope from lambda abstraction
+	\item[$=>$] Evidence that QR can't be the only way in which quantifiers take scope
+	\item Type-lifting account can get the fact that the universal can scope high, but binding is not available:
+	\item Consider for example the account with the high scoping accusative morpheme\\
+	 (\textsc{acc}_2 $~>$  $\lambda Q_{(et)t}.\lambda R_{eet}. \lambda Q'_{(et)t}.Q(\lambda y_e.Q'(\lambda x_e.R(y)(x)))$)
+\end{itemize}
+
+\begin{exe}
+	\ex \Tree [ [A [shark [next [to him$_a$ ] ] ] ] [attacked [\textsc{acc}$_2$ [ $[$every diver$]_b$ ] ] ] ]
+\end{exe}
+
+\begin{itemize}
+	\item Subject DP lexical entries:\\
+
+	\begin{tabular}{l c l}
+		a 	 	& $~>$ 	& $\lambda P_{et}.\lambda P'_{et}.\exists x.(P(x) \land P^\prime(x))$ \\
+		shark 	& $~>$ 	& $\textsc{shark}_{et}$\\
+		next 	& $~>$ 	& $\textsc{next}_{eet}$\\
+		to  	& $~>$ 	& $\lambda x_e.x$\\
+		him$_a$	& $~>$ 	& $a_e$\\
+	\end{tabular}
+
+
+
+	\item Subject NP:\\
+
+	$\Tree [shark [next [to him$_a$ ] ] ]  ~> \lambda x.\textsc{shark}_{et} \land \textsc{next}(a)(x)$ {\small(by predicate modification/$et$-conjunction)}
+
+
+
+	\item Subject DP:\\
+
+	$\Tree [a [shark [next [to him$_a$ ] ] ] ]$\\
+	$~> \lambda P'_{et}.\exists x.(\textsc{shark}_{et} \land \textsc{next}(a)(x) \land P^\prime(x))$ 
+
+
+
+	\item VP lexical entries:\\
+
+	\begin{tabular}{l c l}
+	  attacked 			& $~>$ 	& $\textsc{attack}_{eet}$\\
+	  every 			& $~>$ 	& $\lambda P_{et}.\lambda P'_{et}.\forall y.(P(y) -> P'(y))$\\
+	  diver 			& $~>$ 	& $\textsc{diver}_{et}$\\
+	  \textsc{acc}_2 	& $~>$ 	& $\lambda Q_{(et)t}.\lambda R_{eet}. \lambda Q'_{(et)t}.Q(\lambda y_e.Q'(\lambda x_e.R(x)(y)))$\\
+	\end{tabular}
+
+
+
+	\item Object DP:\\
+
+	$[$every diver$]_b ~> \lambda P'_{(et)t}. \forall y.(\textsc{diver}_{et}(y) -> P'(y))$
+
+	\item Object DP with Case:\\
+
+	$\Tree [\textsc{acc}$_2$ [ $[$every diver$]_a$ ] ] ~> \parbox{.7\textwidth}{$\lambda R_{eet}. \lambda Q'_{(et)t}.[\lambda P'_{(et)t}. \forall y.(\textsc{diver}_{et}(y) -> P'(y))](\lambda y_e.Q'(\lambda x_e.R(y)(x)))\\
+	<=> \lambda R_{eet}. \lambda Q'_{(et)t}.\forall y.(\textsc{diver}_{et}(y) -> [\lambda y_e.Q'(\lambda x_e.R(y)(x))](y))\\
+	<=> \lambda R_{eet}. \lambda Q'_{(et)t}.\forall y.(\textsc{diver}_{et}(y) -> Q'(\lambda x_e.R(y)(x)))
+	$
+	}$
+
+
+
+	\item VP:\\
+
+	$\Tree [attacked [\textsc{acc}$_2$ [ $[$every diver$]_a$ ] ] ] ~> \lambda Q'_{(et)t}.\forall y.(\textsc{diver}_{et}(y) -> Q'(\lambda x_e.\textsc{attack}_{eet}(y)(x)))$
+
+	\item Putting it all together:\\
+	A shark next to him attacked every diver.\\
+	$~> [\lambda Q'_{(et)t}.\forall y.(\textsc{diver}_{et}(y) -> Q'(\lambda x_e.\textsc{attack}_{eet}(y)(x)))](\lambda P'_{et}.\exists x.(\textsc{shark}_{et} \land \textsc{next}(a)(x) \land P^\prime(x)))$
+	\\$<=> \forall y.(\textsc{diver}_{et}(y) -> [\lambda P'_{et}.\exists x.(\textsc{shark}_{et} \land \textsc{next}(a)(x) \land P^\prime(x))](\lambda x_e.\textsc{attack}_{eet}(y)(x)))$
+	\\$<=> \forall y.(\textsc{diver}_{et}(y) -> \exists x.(\textsc{shark}_{et} \land \textsc{next}(a)(x) \land [\lambda x_e.\textsc{attack}_{eet}(y)(x)](x)))$
+	\\$<=> \forall y.(\textsc{diver}_{et}(y) -> \exists x.(\textsc{shark}_{et} \land \textsc{next}(a)(x) \land \textsc{attack}_{eet}(y)(x)))$
+
+	\item High scope of object quantifier possible without c-command. Evidence in favor of a theory that allows quantifiers to scope high without movement.
+\end{itemize}
 
 \end{document}
 
