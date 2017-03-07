@@ -167,8 +167,9 @@
 
 \section{Pronouns and Ellipsis}
 \begin{itemize}
-\item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka 'stripping')
-\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be 'free' (referring to a salient entity in context) or bound by the trace of QR.  
+\item In this section, H \& K describe two types of ellipsis: VP Ellipsis and Bare Argument Ellipsis (aka ``stripping'')
+\item Ellipsis provides a straightforward argument to demonstrate that pronouns can be ``free'' (referring to a salient entity in context) or bound by the trace of QR.  
+\item This indicates that the ``invisible'' ambiguity predicted by the theory is supported by empirical evidence.
 \end{itemize}
 \subsection{VP Ellipsis}
 \begin{itemize}
@@ -200,9 +201,9 @@
 				]
 			]		
 \begin{itemize}
-\item Ellipsis requires an identical form at LF, and the antecedent licenses optional deletion of the duplicated VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
+\item The identity of the two VPs at LF licenses optional deletion of the second VP on the PF branch (indicated by $\langle$$\rangle$ in the trees in this handout). 
 \begin{itemize}
-\item \emph{LF Identity Condition on Ellipsis}: A Constituent may be deleted at PF only if it is a copy of another constituent at LF.	
+\item \emph{LF Identity Condition on Ellipsis}: A constituent may be deleted at PF only if it is a copy of another constituent at LF.	
 \end{itemize}
 \item Crucially, the elided material must have an identical LF representation, not only an identical surface string. 
 \item Elided material cannot be interpreted with a different scope reading than its antecedent.
@@ -220,7 +221,7 @@
 				[.$\lbrack${the milk}$\rbrack^x$ ]
 				[.S
 					[.Laura ]
-					[.VP
+					[.
 						[.drank ]
 						[.$x$ ]
 					]	
@@ -231,18 +232,22 @@
 				[.
 					[.$\lbrack${the juice}$\rbrack^x$ ]
 					[.$\langle$S$\rangle$
-						[.$\langle$Lena$\rangle$ ]
-						[.$\langle$VP$\rangle$
+						[.$\langle$Laura$\rangle$ ]
+						[.
 							[.$\langle$drank$\rangle$ ]
 							[.$\langle x\rangle$ ]
 						]
 					]
 				]
 			]
-		]		
+		]
+\begin{itemize}
+\item Once \emph{the milk} has been QR'ed, then there are two identical subparts of the tree (\emph{Laura drank x}). This licenses ellipsis.	
+\end{itemize}
+		
 \subsection{Referential Pronouns}
 \begin{itemize}
-\item Pronouns may be free (in which case they are understood according to context) or bound by an anaphor.
+\item Elided phrases can also contain pronouns. The interpretation of ellipsis demonstrates that pronouns can be bound by an anaphor, or they can be free and refer to a salient entity. 
 \item \textbf{Context:} It is Roman's birthday...
 \begin{itemize}
 \item Phillip went to his office.
@@ -253,7 +258,7 @@
 \item Phillip went to his office. Marcel didn't.
 \end{itemize}
 \item \textbf{This cannot mean:} Phillip went to Roman's office and Marcel didn't go to his own office. 
-\item This possibility is maintained without another stipulation, for example:
+\item Unfortunately, the theory of ellipsis developed thus far cannot account for this fact. For example:
 \end{itemize}
 \begin{multicols}{2}	
 \Tree	[.S
@@ -262,7 +267,7 @@
 				[.$\lbrack$\textsc{past}$\rbrack$ ]	
 				[.VP
 					[.{go to} ]
-					[.{his_1 office} ]
+					[.{his_x office} ]
 				]
 			]
 		]
@@ -275,18 +280,82 @@
 					[.didn't ]
 					[.$\langle$VP$\rangle$
 						[.$\langle${go to}$\rangle$ ]
-						[.$\langle${his_1 office}$\rangle$ ]
+						[.$\langle${his_x office}$\rangle$ ]
 					]
 				]
 			]
 		]
 \end{multicols}		
 \begin{itemize}
+\item In this example, \emph{his} is a free variable in the first sentence and it derives its meaning from context. In the second sentence, \emph{his} is bound by Marcel. 	
 \item H \& K solve this problem with the following solution: 
 \begin{itemize}
 \item No LF representation (for a sentence or multisentential text) must contain both bound occurrences and free occurrences of the same index.
 \end{itemize}
-\end{itemize}				
+\end{itemize}
+\subsection{Strict and Sloppy Readings}
+\begin{itemize} 
+\item Variable binding can also elucidate the ``sloppy reading puzzle''.	
+\begin{itemize}
+\item Phillip went to his office. Marcel didn't.
+\end{itemize}
+\item Can \textbf{either} mean Marcel didn't go to Phillip's office, or his own office.
+\item If both instances of the variable are free, then the pronoun will be interpreted according to context.
+\begin{multicols}{2}	
+\Tree	[.S
+			[.Phillip ]
+			[.	
+				[.$\lbrack$\textsc{past}$\rbrack$ ]	
+				[.VP
+					[.{go to} ]
+					[.{his_x office} ]
+				]
+			]
+		]
+
+\Tree	[.S
+			[.Marcel ]	
+			[.
+				[.didn't ]
+				[.$\langle$VP$\rangle$
+					[.$\langle${go to}$\rangle$ ]
+					[.$\langle${his_x office}$\rangle$ ]
+				]
+			]
+		]
+\end{multicols}	
+\item Alternatively, both pronouns can be bound, leading to the reading that Marcel didn't go to his own office.
+\end{itemize}
+\begin{multicols}{2}	
+\Tree	[.S
+			[.$\lbrack$Phillip$\rbrack^x$ ]
+			[.	
+				[.$x$ ]	
+				[.
+					[.$\lbrack$\textsc{past}$\rbrack$ ]	
+					[.VP
+						[.{go to} ]
+						[.{his_x office} ]
+					]
+				]
+			]
+		]
+
+\Tree	[.S
+			[.$\lbrack$Marcel$\rbrack^x$ ]
+			[.	
+				[.$x$ ]	
+				[.
+					[.didn't ]
+					[.$\langle$VP$\rangle$
+						[.$\langle${go to}$\rangle$ ]
+						[.$\langle${his_x office}$\rangle$ ]
+					]
+				]
+			]
+		]
+\end{multicols}	
+			
 \section{Syntactic and semantic binding}
 
 \subsection{Chapter overview}
